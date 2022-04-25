@@ -1,0 +1,10 @@
+
+config:
+    name: "获取城市天气信息"
+
+teststeps:
+-
+    name: $title
+    api: api/getWeather.yml
+    validate:
+        - eq: ["status_code", $statusCode]
