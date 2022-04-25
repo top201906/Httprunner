@@ -1,0 +1,18 @@
+
+config:
+    name: "demo testsuite"
+
+testcases:
+-
+    name: "接口测试套件"
+    testcase: testcases/demo_testcase.yml
+    parameters:
+        #方法一
+#        - title-cityCode-statusCode:
+#            - ["平谷","756",200]
+#            - ["昌平","785",200]
+#            - ["大兴","826",200]
+        #方法二
+#        - title-cityCode-statusCode: ${P(datas/ciytCode.csv)}
+        #方法三
+    - title-cityCode-statusCode: ${csv_weather()}
