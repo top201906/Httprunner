@@ -69,7 +69,7 @@ def getWeather():
     elif theCityCode == '785':
         return {"data":[{"cityname":"昌平","cityid":"785","status":"小雨","centigrade":"9℃/18℃","wind":"北风小于3级"}]}
     elif theCityCode == '826':
-        return {"data":[{"cityname": "大兴", "cityid": "826", "status": "小雨", "centigrade": "9℃/18℃", "wind": "北风小于3级"}]}
+        return {"data":[{"cityname":"大兴","cityid":"826","status":"小雨","centigrade":"9℃/18℃","wind":"北风小于3级"}]}
 
 
 if __name__ == '__main__':
