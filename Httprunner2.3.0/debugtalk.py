@@ -1,9 +1,11 @@
 
+import os
 import time
 import csv
 import random
 import hashlib
 import datetime
+from flask import Flask, request
 from collections import namedtuple
 
 def sleep(n_secs):
@@ -36,24 +38,39 @@ def csv_weather():
         compressed = [(x['title'], x['cityCode'], int(x['statusCode'])) for x in weather_date]
         return compressed
 
-print(csv_weather())
+# print(csv_weather())
 
-def md5_key(data):
-   if isinstance(data,str) == True:
-       if data >= u'/u4e00' and data <= u'/u9fa5':
-           md5_data = hashlib.md5(data.encode(encoding='UTF-8')).hexdigest()
+def md5_key(value):
+   if isinstance(value, str) == True:
+       if value >= u'/u4e00' and value <= u'/u9fa5':
+           md5_data = hashlib.md5(value.encode(encoding='UTF-8')).hexdigest()
            return md5_data
        else:
-           md5_data = hashlib.md5(data.encode()).hexdigest()
+           md5_data = hashlib.md5(value.encode()).hexdigest()
            return md5_data
    else:
-       data = str(data)
-       md5_data = hashlib.md5(data.encode()).hexdigest()
+       value = str(value)
+       md5_data = hashlib.md5(value.encode()).hexdigest()
        return md5_data
 
 
 # print(md5_key(123))
 
 
+# mock
+
+app = Flask(__name__)
+@app.route('/WebServices/WeatherWS.asmx/getWeather',methods=['POST','GET'])
+
+def getWeather():
+    theCityCode = request.values.get("theCityCode")
+    if theCityCode == '756':
+        return {"data":[{"cityname":"平谷","cityid":"756","status":"小雨","centigrade":"9℃/18℃","wind":"北风小于3级"}]}
+    elif theCityCode == '785':
+        return {"data":[{"cityname":"昌平","cityid":"785","status":"小雨","centigrade":"9℃/18℃","wind":"北风小于3级"}]}
+    elif theCityCode == '826':
+        return {"data":[{"cityname": "大兴", "cityid": "826", "status": "小雨", "centigrade": "9℃/18℃", "wind": "北风小于3级"}]}
 
 
+if __name__ == '__main__':
+    app.run()
