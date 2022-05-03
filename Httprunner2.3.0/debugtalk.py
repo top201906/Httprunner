@@ -30,32 +30,28 @@ def get_cityCode():
 
 # 读取CSV文件，并将制定字段以int类型输出
 def csv_weather():
-    with open('/Users/mr/Desktop/Git_httprunner/Httprunner2.3.0/datas/ciytCode.csv') as readers:
+    with open('/Users/mr/Desktop/Git_httprunner/Httprunner2.3.0/datas/ciytCode.csv',mode='r',encoding='utf-8') as readers:
         csv_readers = csv.DictReader(readers)
         weather_date = []
         for row in csv_readers:
-            weather_date.append(dict(row))
+            weather_date.append(row)
         compressed = [(x['title'], x['cityCode'], int(x['statusCode'])) for x in weather_date]
         return compressed
 
-# print(csv_weather())
+print(csv_weather())
 
 def md5_key(value):
    if isinstance(value, str) == True:
-       if value >= u'/u4e00' and value <= u'/u9fa5':
-           md5_data = hashlib.md5(value.encode(encoding='UTF-8')).hexdigest()
-           return md5_data
-       else:
-           md5_data = hashlib.md5(value.encode()).hexdigest()
-           return md5_data
+        md5_data = hashlib.md5(value.encode(encoding='UTF-8')).hexdigest()
+        return md5_data.upper()
    else:
+       print('int')
        value = str(value)
-       md5_data = hashlib.md5(value.encode()).hexdigest()
-       return md5_data
+       md5_data = hashlib.md5(value.encode(encoding='UTF-8')).hexdigest()
+       return md5_data.upper()
 
 
-# print(md5_key(123))
-
+print(md5_key('123'))
 
 # mock
 
@@ -72,5 +68,8 @@ def getWeather():
         return {"data":[{"cityname":"大兴","cityid":theCityCode,"status":"小雨","centigrade":"9℃/18℃","wind":"北风小于3级"}]}
 
 
-if __name__ == '__main__':
-    app.run()
+# if __name__ == '__main__':
+#     app.run()
+
+# str1 = 'my name is zhaoheli'
+# print('name' in str1)
