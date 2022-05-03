@@ -38,8 +38,8 @@ def csv_weather():
         compressed = [(x['title'], x['cityCode'], int(x['statusCode'])) for x in weather_date]
         return compressed
 
-print(csv_weather())
-
+# print(csv_weather())
+#MD5加密
 def md5_key(value):
    if isinstance(value, str) == True:
         md5_data = hashlib.md5(value.encode(encoding='UTF-8')).hexdigest()
@@ -51,7 +51,7 @@ def md5_key(value):
        return md5_data.upper()
 
 
-print(md5_key('123'))
+# print(md5_key('123'))
 
 # mock
 
@@ -68,8 +68,5 @@ def getWeather():
         return {"data":[{"cityname":"大兴","cityid":theCityCode,"status":"小雨","centigrade":"9℃/18℃","wind":"北风小于3级"}]}
 
 
-# if __name__ == '__main__':
-#     app.run()
-
-# str1 = 'my name is zhaoheli'
-# print('name' in str1)
+if __name__ == '__main__':
+    app.run()
