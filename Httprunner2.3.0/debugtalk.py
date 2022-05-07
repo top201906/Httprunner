@@ -68,7 +68,7 @@ def getWeather():
     elif theCityCode == '826':
         return {"data":{"cityname":"大兴","cityid":theCityCode,"status":"小雨","centigrade":"9℃/18℃","wind":"北风小于3级"}}
 
-#zhaoheli VS yanxian15011396995
+#zhaoheli VS yanxian15011396995===========3462
 
 
 if __name__ == '__main__':
