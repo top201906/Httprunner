@@ -69,7 +69,7 @@ def getWeather():
         return {"data":{"cityname":"大兴","cityid":theCityCode,"status":"小雨","centigrade":"9℃/18℃","wind":"北风小于3级"}}
 
 
-#zhaoheli,is file_name,vs yanxianshige page
+
 
 if __name__ == '__main__':
     app.run()
