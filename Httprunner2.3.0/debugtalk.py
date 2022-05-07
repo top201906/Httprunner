@@ -62,18 +62,13 @@ def getWeather():
     theCityCode = request.values.get("theCityCode")
     if theCityCode == '756':
         return {"data":{"cityname":"平谷","cityid":theCityCode,"status":"小雨","centigrade":"9℃/18℃","wind":"北风小于3级"}}
-<<<<<<< HEAD
-=======
         # return ('<ArrayOfString xmlns="http://WebXml.com.cn/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><string>直辖市 北京</string><string>平谷</string><string>756</string><string>2022/05/04 22:25:30</string><string>今日天气实况：气温：26℃；风向/风力：南风 2级；湿度：33%</string><string>紫外线强度：很强。</string><string>感冒指数：少发，感冒机率较低，避免长期处于空调屋中。 运动指数：较适宜，请适当减少运动时间，降低运动强度。 过敏指数：较易发，外出需远离过敏源，适当采取防护措施。 穿衣指数：炎热，建议穿短衫、短裤等清凉夏季服装。 洗车指数：适宜，天气较好，适合擦洗汽车。 紫外线指数：很强，涂擦SPF20以上，PA++护肤品，避强光。 </string><string>5月4日 晴转多云</string><string>18℃/32℃</string><string>西南风转东南风小于3级</string><string>0.gif</string><string>1.gif</string><string>5月5日 多云</string><string>13℃/29℃</string><string>南风小于3级转北风4-5级</string><string>1.gif</string><string>1.gif</string><string>5月6日 多云</string><string>8℃/23℃</string><string>北风转东南风小于3级</string><string>1.gif</string><string>1.gif</string><string>5月7日 多云转晴</string><string>8℃/24℃</string><string>东南风小于3级</string><string>1.gif</string><string>0.gif</string><string>5月8日 晴</string><string>9℃/24℃</string><string>西南风转东风小于3级</string><string>0.gif</string><string>0.gif</string></ArrayOfString>')
->>>>>>> f4642e6de62eb1fa41b9d8a0ec2bf47f6423a4f0
     elif theCityCode == '785':
         return {"data":{"cityname":"昌平","cityid":theCityCode,"status":"小雨","centigrade":"9℃/18℃","wind":"北风小于3级"}}
     elif theCityCode == '826':
         return {"data":{"cityname":"大兴","cityid":theCityCode,"status":"小雨","centigrade":"9℃/18℃","wind":"北风小于3级"}}
-<<<<<<< HEAD
-=======
 
->>>>>>> f4642e6de62eb1fa41b9d8a0ec2bf47f6423a4f0
+
 
 
 if __name__ == '__main__':
