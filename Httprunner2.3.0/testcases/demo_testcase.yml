@@ -6,5 +6,7 @@ teststeps:
 -
     name: $title
     api: api/getWeather.yml
+    extract:
+        - cityname: content.data.cityname
     validate:
         - eq: ["status_code", $statusCode]
